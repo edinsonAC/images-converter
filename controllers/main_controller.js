@@ -3,8 +3,8 @@ var fs = require('fs');
 var controller = {
     converterImage: async(req, res, next) => {
         try {
-
             console.log(req.files);
+            let newExt = req.body.ext
             if (!req.files) {
                 return res.status(400).send({
                     status: 'error',
@@ -12,50 +12,24 @@ var controller = {
                 })
             }
             let file = req.files.image
-            let file_name = 'not'
+            let file_name = file.name.split('.')
+            if (file_name[1] != newExt) {
+                file_name = file_name[0]
+                var oldpath = file.path;
+                var newpath = './temp_file/' + file_name + '.' + newExt;
+                fs.rename(oldpath, newpath, function(err) {
+                    var files = fs.createReadStream(newpath);
+                    res.writeHead(200, { 'Content-disposition': 'attachment; filename=' + file_name + '.' + newExt }); //here you can add more headers
+                    files.pipe(res)
+                    fs.unlinkSync(newpath)
+                });
+            } else {
+                return res.status(400).send({
+                    status: 'info',
+                    message: 'Posee la misma extension',
+                })
+            }
 
-            let file_path = file.path
-            let file_split = file_path.split('\\')
-
-            //linux o mac
-            // let file_split = file_path.split('/')
-            // file_name = file_split[0]
-            //extension
-            // let extension = file_name.split('\.')[1]
-
-            file_name = file.name.split('.')[0]
-            var oldpath = file.path;
-            var newpath = './temp_file2/' + file_name + '.png';
-            fs.rename(oldpath, newpath, function(err) {
-                // if (err) throw err;
-                // res.write('File uploaded and moved!');
-                // res.end();
-            });
-
-
-            console.log(file_split);
-            // const fileD = fs.createWriteStream(newpath);
-            // res.pipe(fileD);
-            return res.status(200).send({
-                // status: extension,
-                message: file_name,
-                file
-            })
-
-
-
-
-            // res.write(fil, 'binary');
-            // var file = fs.createWriteStream(fil);
-
-            // res.pipe(file);
-            // file.on('finish', function() {
-            //     file.close(cb); // close() is async, call cb after close completes. });
-            // });
-            // return res.status(200).send({
-            //     status: 'success',
-            //     message: 'Funcionaas'
-            // })
 
         } catch (error) {
             console.log("--------- catch--------", error)
