@@ -31,7 +31,7 @@ var controller = {
                     var files = fs.createReadStream(newpath);
                     res.writeHead(200, { 'Content-disposition': 'attachment; filename=' + file_name + '.' + newExt }); //here you can add more headers
                     files.pipe(res)
-                    fs.unlinkSync(newpath)
+                        // fs.unlinkSync(newpath)
                 });
             } else {
                 return res.status(400).send({
