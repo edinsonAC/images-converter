@@ -17,6 +17,16 @@ var controller = {
                 file_name = file_name[0]
                 var oldpath = file.path;
                 var newpath = './temp_file/' + file_name + '.' + newExt;
+
+                console.log("|||||||||||||||||| NEW PATH |||||||||||||||||||");
+                console.log("|||||||||||||||||| NEW PATH |||||||||||||||||||");
+                console.log(newpath);
+
+
+                console.log("|||||||||||||||||| OLD PATH |||||||||||||||||||");
+                console.log("|||||||||||||||||| OLD PATH |||||||||||||||||||");
+                console.log(oldpath);
+
                 fs.rename(oldpath, newpath, function(err) {
                     var files = fs.createReadStream(newpath);
                     res.writeHead(200, { 'Content-disposition': 'attachment; filename=' + file_name + '.' + newExt }); //here you can add more headers
