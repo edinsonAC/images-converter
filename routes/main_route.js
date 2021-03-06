@@ -8,7 +8,5 @@ var md_upload = multipart()
 var router = express.Router()
 
 router.post('/converter', md_upload, mainController.converterImage)
-    // router.get('/me', authController.me)
-    // router.put('/update_password/:id', authController.updatePass)
 
 module.exports = router
