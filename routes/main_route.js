@@ -8,5 +8,6 @@ var md_upload = multipart()
 var router = express.Router()
 
 router.post('/converter', md_upload, mainController.converterImage)
+router.get('/image/:image', mainController.getImage)
 
 module.exports = router
