@@ -15,7 +15,7 @@ var controller = {
             let file = req.files.image
             let file_name = file.name.split('.')
             if (file_name[1] != newExt) {
-                file_name = file_name[0]
+                file_name = 'image-converter'
                 var oldpath = file.path;
                 var newpath = './temp_file/' + file_name + '.' + newExt;
                 console.log("|||||||||||||||||| NEW PATH |||||||||||||||||||");
@@ -33,7 +33,7 @@ var controller = {
 
                 return res.status(200).send({
                     status: 'info',
-                    message: 'Posee la misma extension',
+                    message: 'Image converter',
                     url: file_name + '.' + newExt
                 })
             } else {
