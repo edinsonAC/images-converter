@@ -61,7 +61,9 @@ var controller = {
         var path_file = './temp_file/' + file
         fs.exists(path_file, (exist) => {
             if (exist) {
-                return res.sendFile(path.resolve(path_file))
+                // return res.sendFile(path.resolve(path_file))
+                return res.download(path_file, file)
+
             } else {
                 return res.status(400).send({
                     status: 'error',
