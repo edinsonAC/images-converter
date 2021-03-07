@@ -29,13 +29,13 @@ var controller = {
                     // files.pipe(res)
                     // res.download(newpath, file_name + '.' + newExt)
                     // fs.unlinkSync(newpath)
+                    return res.status(200).send({
+                        status: 'info',
+                        message: 'Image converter',
+                        url: file_name + '.' + newExt
+                    })
                 });
 
-                return res.status(200).send({
-                    status: 'info',
-                    message: 'Image converter',
-                    url: file_name + '.' + newExt
-                })
             } else {
                 return res.status(400).send({
                     status: 'info',
