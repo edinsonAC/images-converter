@@ -34,3 +34,8 @@ Permite el desarrollo de aplicaciones gráficas de escritorio usando componentes
 3. Seleccionar la imagen a convertir almacenada en el ordenador.
 4. Seleccionar el formato al cual se desea convertir.
 5. Descargar el archivo convertido.
+
+### Para el desarrollador
+
+1. Instalar las dependencias de nodejs con npm i.
+2. Iniciar el entorno de desarrollo con npm run start.
