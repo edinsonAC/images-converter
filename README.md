@@ -24,7 +24,7 @@ Este es un módulo node.js disponible a través del registro npm. Multiparty nos
 Dotenv es un módulo de dependencia cero que carga variables de entorno desde un archivo .env en process.env. El almacenamiento de la configuración en el entorno por separado del código se basa en la metodología de la aplicación de doce factores.
 
 + **Electron:** 
-Permite el desarrollo de aplicaciones gráficas de escritorio usando componentes del lado del cliente y del servidor originalmente desarrolladas para aplicaciones web: Node.js del lado del servidor y Chromium como interfaz.
+Permite el desarrollo de aplicaciones gráficas de escritorio usando componentes del lado del cliente y del servidor originalmente desarrolladas para aplicaciones web: Node.js del lado del servidor y Chromium como interfaz, Electron es un framework hibrido de js que permite emular la web en forma de escritorio
 
 
 ### ¿Cómo ejecutar  la aplicación?
