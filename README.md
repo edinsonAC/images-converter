@@ -16,15 +16,19 @@ La arquitectura que se manejó, fue la arquitectura atómica, la cual consiste e
 ### Librerías Implementadas
 + **Express:**
 Express es una infraestructura de aplicaciones web Node.js mínima y flexible que proporciona un conjunto sólido de características para las aplicaciones web y móviles.
+El comando para la instalación de la librería Express, en el sistema operativo windows: $ npm install express
 
 + **Multiparty:** 
 Este es un módulo node.js disponible a través del registro npm. Multiparty nos ayuda a analizar solicitudes http con tipo de contenido, también conocido como cargas de archivos.multipart/form-data.
+El comando para la instalación de la librería Multiparty, en el sistema operativo windows: npm install multiparty
 
 + **Dotenv:** 
 Dotenv es un módulo de dependencia cero que carga variables de entorno desde un archivo .env en process.env. El almacenamiento de la configuración en el entorno por separado del código se basa en la metodología de la aplicación de doce factores.
+El comando para la instalación de la librería Multiparty, en el sistema operativo windows: npm install dotenv
 
 + **Electron:** 
-Permite el desarrollo de aplicaciones gráficas de escritorio usando componentes del lado del cliente y del servidor originalmente desarrolladas para aplicaciones web: Node.js del lado del servidor y Chromium como interfaz, Electron es un framework hibrido de js que permite emular la web en forma de escritorio
+Permite el desarrollo de aplicaciones gráficas de escritorio usando componentes del lado del cliente y del servidor originalmente desarrolladas para aplicaciones web: Node.js del lado del servidor y Chromium como interfaz, Electron es un framework hibrido de js que permite emular la web en forma de escritorio.
+Para más información sobre la libreria electron y su ecosistema: <a href="https://www.electronjs.org/">Electron</a>
 
 
 ### ¿Cómo ejecutar  la aplicación?
